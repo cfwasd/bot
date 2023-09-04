@@ -1,10 +1,10 @@
+import threading
 from datetime import datetime
 
-from libs import singleton
+from libs.singleton import Singleton
 
 
-@singleton
-class Log:
+class Log(Singleton):
     def log_info(self, message):
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"\033[32m[{now}] [INFO] {message}\033[0m")
